@@ -26,12 +26,16 @@ let numberDrawn = 0;
 saveTheNumber.onsubmit = function (e) {
   e.preventDefault();
   numberDrawn = Math.floor(Math.random() * 77);
-  const num = document.getElementsByClassName("number");
-  console.log(num.value);
+  const num = document.querySelectorAll(".number");
 
-  if (numberDrawn === num.innerText) {
-    num.classList.add("drawns");
-  }
+  num.forEach((h3) => {
+    parseInt(h3.innerText);
+
+    if (numberDrawn === parseInt(h3.innerText)) {
+      h3.parentElement.style.background = "yellow";
+      /*num.classList.add(drawns);*/
+    }
+  });
 };
 
 //caricamento pagina//
